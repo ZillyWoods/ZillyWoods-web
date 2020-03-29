@@ -1,67 +1,204 @@
 <!DOCTYPE html>
+
+<!-- Page language -->
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>ZillyWoods</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="all">
-        <div class="wrapper">
-            <div class="content">
-                <div class="padded-content">
-                    <h1>ZillyWoods</h1>
-                    <p>
-                        A Teeworlds 0.7 client with basic ddrace features: <br>
-                        - show game tiles <code>cl_overlay_entities</code> <br>
-                        - EXPERIMENTAL ddrace editor support (switch,front,tele &amp; speedup layers) <br>
-                        - ddrace tiles prediction (hook through and stopper) <br>
-                        - hook collision <code>+showhookcoll</code> <br>
-                        - zoom <code>zoom+;zoom-;zoom</code> <br>
-                        - 64 player scoreboard <br>
-                        - a client dummy <code>bind x "toggle cl_dummy 1 0"</code> <br>
-                        - highlight admins red in scoreboard <code>cl_show_admins</code> <br>
-                        - show when spectators leave the server <code>cl_show_silent_messages</code> <br>
-                        - show prediction to server <code>cl_showpred</code> <br>
-                        For more info and releases visit <a href="https://github.com/ZillyWoods/ZillyWoods/releases">github</a>.
-                    </p>
-                    <h3>Download v0007</h3>
-                    <a href="https://github.com/ZillyWoods/ZillyWoods/releases/download/v0007/zillywoods-0007-0.7.4-win64.zip">
-                        windows64
-                    </a><br>
-                    <a href="https://github.com/ZillyWoods/ZillyWoods/releases/download/v0007/zillywoods-0007-0.7.4-win32.zip">
-                        windows32
-                    </a><br>
-                    <a href="https://github.com/ZillyWoods/ZillyWoods/releases/download/v0007/zillywoods-0007-0.7.4-osx.dmg">
-                        macOS
-                    </a><br>
-                    <!--
-                        <a href="https://github.com/ZillyWoods/ZillyWoods/releases/download/v0007/zillywoods-0007-0.7.4-linux_x86.tar.xz">
-                            linux32
-                        </a><br>
-                    -->
-                    <a href="https://github.com/ZillyWoods/ZillyWoods/releases/download/v0007/zillywoods-0007-0.7.4-linux_x86_64.tar.xz">
-                        linux64
-                    </a><br>
-                    <h3>Get the source</h3>
-                    <a href="https://github.com/ZillyWoods/ZillyWoods">
-                        <img src="img/github.svg" alt="github" style="height: 64px">
-                    </a>
-                </div> <!-- padded content -->
-                <div class="grass"></div>
-            </div> <!-- content -->
-        </div> <!-- wrapper-->
-        <code style="color:rgb(139, 218, 146);font-size: 80%;margin-left: 20px">
-            # install from latest source<br>
-            bash <(curl https://raw.githubusercontent.com/ZillyWoods/ZillyWoods-scripts/master/install.sh)
-        </code>
-        <div class="footer">
-            <div class="small_tree"></div>
-            <div class="bush"></div>
-            <div class="grass"></div>
+
+  <head>
+
+    <!-- Info for browsers -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link href="favicon.ico" rel="shortcut icon" type="image/x-icon"> -->
+    <!-- <link href="favicon.png" rel="icon" sizes="192x192"> -->
+
+    <!-- Page title & description -->
+    <title>ZillyWoods Client</title>
+    <meta name="description" content="Custom client for Teeworlds version 0.7+ coded by ChillerDragon">
+
+    <!-- Styles -->
+    <link href="assets/normalize.min.css?v=8.0.1" rel="stylesheet">
+    <link href="assets/fonts.css" rel="stylesheet">
+    <link href="assets/material-components-web.min.css?v=5.1.0" rel="stylesheet">
+    <link href="assets/main.css" rel="stylesheet">
+
+  </head>
+
+  <!-- use "tw-theme" class here if you want teeish deisgn -->
+  <body class="mdc-typography tw-theme">
+
+    <!-- Header -->
+    <header class="mdc-top-app-bar mdc-theme--secondary-bg mdc-elevation--z4 mdc-top-app-bar--fixed">
+      <div class="mdc-top-app-bar__row">
+
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"></section>
+
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-center">
+
+          <!-- Title in the header -->
+          <span class="mdc-top-app-bar__title">ZillyWoods Client</span>
+
+        </section>
+
+        <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end">
+
+          <!-- Icon-link to source code on GitHub -->
+          <a href="https://github.com/ZillyWoods" target="_blank" rel="noopener" class="mdc-top-app-bar__action-item mdc-icon-button" aria-label="Source code">
+
+            <!-- icon: https://materialdesignicons.com/icon/github -->
+            <svg viewBox="0 0 24 24">
+              <path d="M12,2A10,10 0 0,0 2,12C2,16.42 4.87,20.17 8.84,21.5C9.34,21.58 9.5,21.27 9.5,21C9.5,20.77 9.5,20.14 9.5,19.31C6.73,19.91 6.14,17.97 6.14,17.97C5.68,16.81 5.03,16.5 5.03,16.5C4.12,15.88 5.1,15.9 5.1,15.9C6.1,15.97 6.63,16.93 6.63,16.93C7.5,18.45 8.97,18 9.54,17.76C9.63,17.11 9.89,16.67 10.17,16.42C7.95,16.17 5.62,15.31 5.62,11.5C5.62,10.39 6,9.5 6.65,8.79C6.55,8.54 6.2,7.5 6.75,6.15C6.75,6.15 7.59,5.88 9.5,7.17C10.29,6.95 11.15,6.84 12,6.84C12.85,6.84 13.71,6.95 14.5,7.17C16.41,5.88 17.25,6.15 17.25,6.15C17.8,7.5 17.45,8.54 17.35,8.79C18,9.5 18.38,10.39 18.38,11.5C18.38,15.32 16.04,16.16 13.81,16.41C14.17,16.72 14.5,17.33 14.5,18.26C14.5,19.6 14.5,20.68 14.5,21C14.5,21.27 14.66,21.59 15.17,21.5C19.14,20.16 22,16.42 22,12A10,10 0 0,0 12,2Z" />
+            </svg>
+
+            <div class="mdc-ripple-surface mdc-ripple-surface--primary"></div>
+
+          </a>
+          
+        </section>
+
+      </div>
+    </header>
+
+    <section class="mdc-top-app-bar--fixed-adjust app-content mdc-theme--background">
+
+      <!-- Main page content -->
+      <main>
+
+        <!-- Info section -->
+        <span class="mdc-typography--headline6 mdc-theme--text-secondary-on-light">About</span>
+
+        <div class="mdc-card mdc-card-simple mdc-typography--body1">
+
+          <span>
+            Custom client for <a href="https://www.teeworlds.com/" target="_blank" rel="noopener">Teeworlds</a> version 0.7+, with basic DDRace modification features such as:
+          </span>
+
+          <br />
+
+          <ul class="mdc-list">
+            <li class="mdc-list-item__text">
+              Entities overlay - <code>cl_overlay_entities &lt;0|100&gt;</code>
+            </li>
+            <li class="mdc-list-item__text">
+              Custom zoom - <code>zoom+</code>, <code>zoom</code>, <code>zoom-</code>
+            </li>
+            <li class="mdc-list-item__text">
+              Visible hook collision lines - <code>bind &lt;key&gt; +showhookcoll</code> (on key hold)
+            </li>
+            <li class="mdc-list-item__text">
+              DDRace tiles prediction (hookthrough & stopper)
+            </li>
+            <li class="mdc-list-item__text">
+              *Experimental* DDRace map editor support (switch, front, tele & speedup layers)
+            </li>
+            <li class="mdc-list-item__text">
+              Scoreboard for 64 players
+            </li>
+            <li class="mdc-list-item__text">
+              Highlight server administrators (with red color) in scoreboard - <code>cl_show_admins &lt;0|1&gt;</code>
+            </li>
+            <li class="mdc-list-item__text">
+              Connect dummy button
+            </li>
+            <li class="mdc-list-item__text">
+              Dummy switch bind - <code>bind &lt;key&gt; "toggle cl_dummy 1 0"</code>
+            </li>
+            <li class="mdc-list-item__text">
+              Info about spectators leaving the server - <code>cl_show_silent_messages &lt;0|1&gt;</code>
+            </li>
+            <li class="mdc-list-item__text">
+              Show prediction to server - <code>cl_showpred &lt;0|1&gt;</code>
+            </li>
+          </ul>
+
+          <br />
+
+          <span>
+            For <a href="https://github.com/ZillyWoods/ZillyWoods/blob/zilly/readme.md" target="_blank" rel="noopener">more info</a> and <a href="https://github.com/ZillyWoods/ZillyWoods/releases" target="_blank" rel="noopener">older releases</a> visit <a href="https://github.com/ZillyWoods/ZillyWoods" target="_blank" rel="noopener">GitHub</a>
+          </span>
+          
         </div>
-    </div> <!-- all -->
-</body>
+
+        <!-- Download section -->
+        <span class="mdc-typography--headline6 mdc-theme--text-secondary-on-light">Download - v0007</span>
+
+        <div class="mdc-card mdc-card-simple">
+          <form class="direction-row">
+            
+              <button formaction="https://github.com/ZillyWoods/ZillyWoods/releases/download/v0007/zillywoods-0007-0.7.4-win32.zip" class="mdc-button mdc-button--unelevated">
+                <span class="mdc-button__label">Windows x32</span>
+                <span class="mdc-button__ripple"></span>
+              </button>
+
+              <button formaction="https://github.com/ZillyWoods/ZillyWoods/releases/download/v0007/zillywoods-0007-0.7.4-win64.zip" class="mdc-button mdc-button--unelevated">
+                <span class="mdc-button__label">Windows x64</span>
+                <span class="mdc-button__ripple"></span>
+              </button>
+
+              <button disabled formaction="https://github.com/ZillyWoods/ZillyWoods/releases/download/v0007/zillywoods-0007-0.7.4-linux_x86.tar.xz" class="mdc-button mdc-button--unelevated">
+                <span class="mdc-button__label">Linux32</span>
+                <span class="mdc-button__ripple"></span>
+              </button>
+
+              <button formaction="https://github.com/ZillyWoods/ZillyWoods/releases/download/v0007/zillywoods-0007-0.7.4-linux_x86_64.tar.xz" class="mdc-button mdc-button--unelevated">
+                <span class="mdc-button__label">Linux64</span>
+                <span class="mdc-button__ripple"></span>
+              </button>
+
+              <button formaction="https://github.com/ZillyWoods/ZillyWoods/releases/download/v0007/zillywoods-0007-0.7.4-osx.dmg" class="mdc-button mdc-button--unelevated">
+                <span class="mdc-button__label">MacOS</span>
+                <span class="mdc-button__ripple"></span>
+              </button>
+
+          </form>
+        </div>
+
+      </main>
+
+      <!-- Footer -->
+      <footer class="mdc-top-app-bar mdc-theme--secondary-bg">
+        <div class="mdc-top-app-bar__row">
+
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-start"></section>
+
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-center">
+            <div>
+              
+              <!-- Credits -->
+              <span class="mdc-typography--body2 nowrap">
+                Client coded by <a href="https://github.com/ChillerDragon" target="_blank" rel="noopener"><b>ChillerDragon</b></a>
+              </span>
+
+              <br />
+
+              <span class="mdc-typography--caption">
+                Website by <a href="https://github.com/Ekidoxx" target="_blank" rel="noopener">Ekidoxx</a>
+              </span>
+
+            </div>
+          </section>
+
+          <section class="mdc-top-app-bar__section mdc-top-app-bar__section--align-end"></section>
+
+
+        </div>
+      </footer>
+
+    </section>
+
+    <!-- Decorations for teeish theme  -->
+    <section class="doodads">
+      <div class="stalactite-1"></div>
+      <div class="stalactite-2"></div>
+      <div class="house"></div>
+      <div class="tree"></div>
+      <div class="grass"></div>
+      <div class="bush"></div>
+    </section>
+
+    <!-- Scripts -->
+    <script src="assets/material-components-web.min.js?v=5.1.0"></script>
+    <script src="assets/main.js" defer></script>
+
+  </body>
+
 </html>

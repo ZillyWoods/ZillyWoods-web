@@ -1,0 +1,370 @@
+/* Overrides */
+
+:root {
+  --mdc-theme-primary: #68A421;
+  --mdc-theme-on-primary: #fff;
+  --mdc-theme-secondary: #212121;
+  --mdc-theme-on-secondary: #fff;
+  --mdc-theme-background: #f5f5f5;
+}
+
+
+
+/* Customs */
+
+.mdc-top-app-bar__section--align-center {
+  text-align: center;
+  justify-content: center;
+  order: 0;
+}
+
+.mdc-card-simple {
+  padding: 1rem;
+}
+
+.direction-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+}
+
+.direction-row {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.nowrap {
+  white-space: nowrap;
+}
+
+
+
+/* General */
+
+::selection {
+  background-color: rgba(0, 0, 0, 0.16);
+}
+.mdc-top-app-bar ::selection {
+  background-color: rgba(255, 255, 255, 0.16);
+}
+
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+b,
+strong {
+  font-weight: 500;
+}
+
+a {
+  color: var(--mdc-theme-primary);
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+a:focus {
+  outline-color: var(--mdc-theme-primary);
+}
+
+html,
+body {
+  min-width: 320px;
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+.mdc-typography {
+  color: rgba(0, 0, 0, 0.87);
+}
+
+.mdc-top-app-bar {
+  align-items: center;
+}
+
+.mdc-top-app-bar__section {
+  flex: 1 0 0;
+  min-width: auto;
+}
+
+.mdc-top-app-bar__row,
+main {
+  max-width: 768px;
+}
+
+
+/* Header */
+
+header .mdc-top-app-bar__title {
+  padding: 0;
+}
+
+
+
+/* Content */
+
+.app-content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  align-items: center;
+}
+
+
+
+/* Main */
+
+main {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  width: 100%;
+  align-items: center;
+  padding: 2rem 0.75rem 4rem 0.75rem;
+  box-sizing: border-box;
+}
+
+main .mdc-typography--headline6 {
+  margin: 2rem 0 1rem 0;
+}
+main .mdc-typography--headline6:first-of-type {
+  margin-top: 0;
+}
+
+.mdc-list {
+  padding: 0;
+  list-style-type: square;
+}
+
+.mdc-list-group__subheader {
+  line-height: 1.5rem;
+  font-weight: 500;
+  margin: 1.5rem 0 0.5rem 0;
+  overflow: hidden;
+}
+.mdc-list-group__subheader:first-of-type {
+  margin-top: 0;
+}
+
+.mdc-list-item__text {
+  margin-left: 2rem;
+  white-space: normal;
+  overflow: initial;
+}
+
+.mdc-list-item__text + .mdc-list-item__text {
+  margin-top: 0.5rem;
+}
+
+code {
+  font-family: "Roboto Mono", consolas, monospace;
+  padding: 0 0.25rem;
+  font-size: 0.9em;
+  background-color: rgba(0, 0, 0, 0.08);
+  border-radius: 0.25rem;
+}
+
+form section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.mdc-button {
+  text-transform: none;
+  margin: 0.5rem;
+}
+
+
+
+/* Footer */
+
+footer.mdc-top-app-bar {
+  position: initial;
+}
+
+footer a {
+  color: inherit;
+}
+footer a:focus {
+  outline-color: inherit;
+}
+
+
+
+/* Decorations */
+
+.doodads {
+  display: none;
+}
+
+
+
+
+/* Alternative TW theme */
+
+.tw-theme header.mdc-top-app-bar {
+  background-color: transparent !important;
+  background-image: url("images/grass_main--52.png"), /* bottom */
+                    url("images/grass_main--1.png"); /* top */
+  background-position: center bottom,
+                       center top;
+  background-repeat: repeat-x;
+  box-shadow: none;
+}
+
+.tw-theme header .mdc-top-app-bar__row {
+  padding-bottom: 25px;
+  height: 89px;
+}
+
+.tw-theme .mdc-top-app-bar--fixed-adjust {
+  padding-top: 89px;
+}
+
+.tw-theme .app-content {
+  background-color: #688DB5;
+  background: linear-gradient(to bottom, #688DB5 0%,#C2DFF8 100%);
+  background-attachment: fixed;
+}
+
+.tw-theme main {
+  z-index: 1;
+}
+
+.tw-theme .mdc-card {
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.tw-theme footer.mdc-top-app-bar {
+  background-color: transparent !important;
+  background-image: url("images/grass_main--16.png"), /* top */
+                    url("images/grass_main--1.png"); /* bottom */
+  background-position: center top,
+                       center bottom;
+  background-repeat: repeat-x;
+  box-shadow: none;
+}
+
+.tw-theme footer .mdc-top-app-bar__row {
+  padding-top: 41px;
+  height: 105px;
+}
+
+.tw-theme .doodads {
+  display: block;
+  width: 100%;
+  position: relative;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.stalactite-1 {
+  width: 128px;
+  height: 256px;
+  background-image: url("images/grass_doodads--204.png");
+  position: fixed;
+  top: 3.5rem;
+  left: 4rem;
+}
+
+.stalactite-2 {
+  width: 128px;
+  height: 256px;
+  background-image: url("images/grass_doodads--206.png");
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+}
+
+.house {
+  width: 320px;
+  height: 320px;
+  background-image: url("images/grass_doodads--176.png");
+  position: absolute;
+  right: 4rem;
+  bottom: 105px;
+}
+
+.tree {
+  width: 384px;
+  height: 384px;
+  background-image: url("images/grass_doodads--106.png");
+  position: absolute;
+  left: 8rem;
+  bottom: 105px;
+}
+
+.grass {
+  width: 100%;
+  height: 64px;
+  background-image: url("images/grass_doodads--11-mix.png");
+  background-position-x: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 105px;
+}
+
+.bush {
+  width: 100%;
+  height: 128px;
+  background-image: url("images/grass_doodads--32.png");
+  background-position-x: center;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 105px;
+}
+
+@media only screen and (max-width: 1024px) {
+
+  .tree {
+    left: 0;
+  }
+
+  .bush {
+    width: 192px;
+    left: 18rem;
+  }
+
+}
+
+@media only screen and (max-width: 768px) {
+
+  .stalactite-1 { 
+    left: 1rem;
+  }
+
+  .stalactite-2,
+  .tree {
+    display: none;
+  }
+
+  .house {
+    right: 0;
+  }
+
+  .bush {
+    left: 8rem;
+  }
+
+}
