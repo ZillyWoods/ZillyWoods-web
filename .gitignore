@@ -1,1 +1,25 @@
+# Own
 tags
+debug.log
+
+# Visual Studio (Code)
+.vs/
+.vscode/
+*.code-workspace
+
+# Linux OS
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# Windows OS
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.lnk
