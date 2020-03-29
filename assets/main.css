@@ -80,7 +80,6 @@ a:focus {
 
 html,
 body {
-  min-width: 320px;
   height: 100%;
 }
 
@@ -91,10 +90,12 @@ body {
 
 .mdc-typography {
   color: rgba(0, 0, 0, 0.87);
+  word-break: break-word;
 }
 
 .mdc-top-app-bar {
   align-items: center;
+  top: 0 !important;
 }
 
 .mdc-top-app-bar__section {
@@ -218,6 +219,12 @@ footer a:focus {
 
 /* Alternative TW theme */
 
+body.tw-theme {
+  background-color: #688DB5;
+  background: linear-gradient(to bottom, #688DB5 0%,#C2DFF8 100%);
+  background-attachment: fixed;
+}
+
 .tw-theme header.mdc-top-app-bar {
   background-color: transparent !important;
   background-image: url("images/grass_main--52.png"), /* bottom */
@@ -238,9 +245,7 @@ footer a:focus {
 }
 
 .tw-theme .app-content {
-  background-color: #688DB5;
-  background: linear-gradient(to bottom, #688DB5 0%,#C2DFF8 100%);
-  background-attachment: fixed;
+  background: transparent;
 }
 
 .tw-theme main {
@@ -257,13 +262,15 @@ footer a:focus {
                     url("images/grass_main--1.png"); /* bottom */
   background-position: center top,
                        center bottom;
-  background-repeat: repeat-x;
+  background-repeat: repeat-x,
+                     repeat;
   box-shadow: none;
 }
 
 .tw-theme footer .mdc-top-app-bar__row {
   padding-top: 41px;
-  height: 105px;
+  height: auto;
+  min-height: 105px;
 }
 
 .tw-theme .doodads {
@@ -365,6 +372,19 @@ footer a:focus {
 
   .bush {
     left: 8rem;
+  }
+
+}
+
+@media only screen and (max-width: 319px) {
+
+  .house {
+    display: none
+  }
+
+  .bush {
+    width: 100%;
+    left: 0;
   }
 
 }
