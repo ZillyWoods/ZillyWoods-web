@@ -1,6 +1,7 @@
 /* Overrides */
 
 :root {
+  font-size: 16px;
   --mdc-theme-primary: #68A421;
   --mdc-theme-on-primary: #fff;
   --mdc-theme-secondary: #212121;
