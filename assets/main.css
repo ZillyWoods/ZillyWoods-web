@@ -228,8 +228,8 @@ body.tw-theme {
 
 .tw-theme header.mdc-top-app-bar {
   background-color: transparent !important;
-  background-image: url("images/realistic/transparent/tiles/dirt_border_bottom.svg"), /* bottom */
-                    url("images_old/grass_main--1.png"); /* top */
+  background-image: url("images/realistic/transparent/tiles/grass_main/52_dirt_border_bottom.svg"), /* bottom */
+                    url("images/realistic/transparent/tiles/grass_main/1_dirt.svg"); /* top */
   background-position: center bottom,
                        center top;
   background-repeat: repeat-x;
@@ -259,8 +259,8 @@ body.tw-theme {
 
 .tw-theme footer.mdc-top-app-bar {
   background-color: transparent !important;
-  background-image: url("images/realistic/transparent/tiles/grass.svg"), /* top */
-                    url("images_old/grass_main--1.png"); /* bottom */
+  background-image: url("images/realistic/transparent/tiles/grass_main/16_grass_top.svg"), /* top */
+                    url("images/realistic/transparent/tiles/grass_main/1_dirt.svg"); /* bottom */
   background-position: center top,
                        center bottom;
   background-repeat: repeat-x,
@@ -296,7 +296,7 @@ body.tw-theme {
 .stalactite-2 {
   width: 128px;
   height: 256px;
-  background-image: url("images_old/grass_doodads--206.png");
+  background-image: url("images/realistic/transparent/doodads/stalagtite2.svg");
   position: fixed;
   top: 2rem;
   right: 2rem;
@@ -323,7 +323,7 @@ body.tw-theme {
 .grass {
   width: 100%;
   height: 64px;
-  background-image: url("images_old/grass_doodads--11-mix.png");
+  background-image: url("images/realistic/transparent/doodads/grass2.svg");
   background-position-x: center;
   position: absolute;
   left: 0;
